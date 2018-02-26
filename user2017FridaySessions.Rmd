@@ -1,0 +1,102 @@
+---
+title: "user2017"
+author: "Tobias Romar"
+date: "7 juli 2017"
+output: html_document
+---
+
+
+##Tidy Evaluation (R Studio)
+
+- Tidy evaluation - dealing with a special class of R functions
+- Refer to your data directly
+- Quoting works against you when you write functions
+- Tidy eval provides full programmability
+- quote() + eval() --> get the data
+- eval(x, data) --> different context
+- Programming with grammars: stringly(), paste()
+- Regular functions
+- Quasiquotation; quoting time & evaluation time
+- Need to vary the expresison dplyr sees
+- !! evaluates at quoting time
+- Need something that looks like code
+- x <- sym("height")
+- Use exxpr() to debug quoting time
+- enquo()
+- Sumamry: quoting functions are not like regular functions
+- Use: enquo() to create your own quoting function
+- Learn: syms(), quos()
+
+##Letting R sense the world around it with **shinysense**
+
+- library(shinysense)
+- A package filled with shiny modules developed on JavaScript to gather data from different sources (primarly mobile devices)
+- shinyswiper --> swipe function 
+- shinydrwer() --> draw the data and look the result
+- shinyear() --> records audio
+- shinymovr() -> capture and return acceleromter data from your phone or tablet
+- shinysee() --> record pictures from phone?
+- shinypopup() --> based in library (pap
+- Why? --> Shiny is good at presenting data, but what about gatherign data? Trying to make shiny work on the whole data science process
+- shinysense tries to make it easier tot build mobile friendly apps
+- library(PapR) - shiny module
+- Shiny Modules - bundling chunks of code in shiny for use
+- JavaScript has a ton of APIs for gathering data
+- Not on CRAN so has to be installed from Github
+- devtools::install_github("blablabla")
+- Papr: Tinder-esque way 
+- GenomeBot -> markovchain and then shinysense to swipe 
+- Nick Strayer
+
+##papr: Tinder for pre-prints
+- swipe through papers and get recommendations and finally see who you are most close to
+- Allows you to swipe on pre-prints
+- swipeR
+- saving data for multiple logins, running the app locally with a specific report, saving API credentials, tactile input, creating recommender engine
+- tabPanel(), googleAuthR(), 
+- need to set upp web applicatiojn with Google
+- runApp(port = 1220)
+- Popup window from shinysense (callModule() etc.)
+- sidebarLayout()
+- library(fulltext) for text in app -> biorxiv_search()
+- library(rdrop2) save output to dropbox
+- tidytext() & irlba() & plotly()
+- compare to other twitter user regarding the 
+
+##shiny.collections: Google Docs-like live collaboration in Shiny
+- SHiny has taken a step further --> much more diverse applications
+- Users request data to be saved & live collaboration
+- Need a reactive database where collect and store
+- Reactive way -> synced
+- Examples: **RethinkDB**, Firebase & MongaDB
+- library(rethinker) - Call-back based & painful in shiny
+- library(shiny.collections) --> results as shiny reactive
+- library(purrr) & library(purrrlyr)
+- demo: chatroom in shiny by library(shiny.collections) under 50 lines of code
+- github --> appsilon/shiny.collections
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

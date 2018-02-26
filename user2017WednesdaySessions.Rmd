@@ -1,0 +1,158 @@
+---
+title: "user2017"
+author: "Tobias Romar"
+date: "5 juli 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##robets forecasting time series with robust exponential smoothing methods with trend and seasonality
+
+- Trend, seasonality and error component
+- Additive or multiplicative
+- Base case model to use:
+
+```{r ets}
+library(forecast)
+model <-  ets(1:10)
+```
+
+- New suggested model suggested that is not that sensitive to outliers
+
+```{r robets}
+library(robets)
+model <-  robets(1:10)
+```
+
+
+##A benchmark of Open Source Tools for Machine Laearning from R
+
+- Mention the importance of just increasing RAM and then you can do many calculation in R
+- 90 percent of the analysis is done with data up to 10 million records
+- Which alorithms to adopt for that case?
+- Random Forest, Ann and boosting
+- R packaes, python scikit learn and H20 together 80 percent of machine learning
+- Github: szilard/benchm-ml
+- xgboost performing best for random forest (h20 also good)
+- lightgbm fastest for boosted models
+- airline data boosting beating deep learning
+- R Keras package released some weeks ago
+- main conclusion: get some value from data - use best tools
+
+
+##Interacting with databases from shiny
+
+- Use shiny as GUI to fill in data in a db
+- Useful packages: DBI, odbc, dplyr, pool
+- Realtional databases and NoSQL
+- DBI - Interacts with the database from R. Possible to write to db - watch ip for malfunctions, e.g. delate table
+- odbc - independent of operating system (standrs api to interact with databases). Looks similar to DBI.
+- dplyr - the point here is to use dplyr insated of SQL to manipulate the data
+- pool - creates a pool of connections, local connection, mainly important for shiny apps, poolConnect instaed of DBIconnect  & DBI close
+- A GRUD APP
+
+
+##ShinyProxy
+
+- Way to host shiny apps on a server
+- How to configure the shiny application on the server
+- Possible to set up different accounts with different permissions
+- Possible to collect user statistics 
+- European commission has requested a range of shiny applications
+- Main conclusion: deploy locally developed shiny apps on the server
+
+
+##ShinyProxy
+
+- Developing and deploying large scale Shiny applications for non-life insurance
+- FRISS - generates a risk score based on different data sources
+- Uses shiny applications to analyse and present the data
+- Uses OPENCPU for statistical modelling
+- Make a map apps with Leaflet
+- Network plots to identify fraud (how each claim is related)
+- Create interactive apps with shiny + htmlwidgets
+- html templates
+- Docker
+- Octopus
+- In general: Split big apps into moduls
+
+
+####Lunch Break...
+
+##Stream processing with R in AWS
+
+- AWR, AWR.KMS, AWR.Kinesis (R Packages)
+- Use R for stream processing due to simplicity, not 100 rows of Jave code to change date format
+- Potentially worth to pay for infrastructure (AWS)
+- Kinesis -> stream processing data. Continously filter the data you want, e.g. username for twitter data
+- Example how to read data from Kinesis, library(AWS.Kinesis) #cannot run in RStudio
+- Specific file needs to be written to execute
+- flight data: library(nycflights13)
+- Dockerize the application in order to run it everywhere
+- Amazon has ECR in order to store the docker file
+
+##Architectural Elements Enabling R for Big Data
+
+- Big data definition: when regular applocation can´t deal with it
+- We want to use R for everything
+- With R, data need to fit into RAM
+- When data gets bigger -> offload to processing to powerful backends
+- Oracle in collaboration with Hadoop and Spark etc.
+- ORAAH, sparklyr
+- Data and Task Parallelism, example ore.tableApply()
+- Conclusion: Leverage powerful back-ends to do the heavy work
+- Oracle R Advanced Analytics for Hadoop
+- Oracle database pitch!
+
+##Beyond  Prototyping: Best practises for R in critical production environments
+
+- Production, Test & Development
+- Version Control - Branch Strategy between the above
+- Continuous integration - Checking if updated in in Github automatically
+- Package management - Problems when different versions of packages -> install packages to the projects or: 
+- centralized Package Management -  LRAN --> Data Science Admin
+
+##Implementing Predictive Analytics projects in corporate environmnets
+
+- Which kind of projects, different corporate environments and best implementations?
+- Online marketing, CRM & BI/Reporting
+- SQL, R Markdown & data processing and Model train and test in R
+- Case 1: Banking Industry - scoring algorithmn to make recommendations on product to offer. R in backend
+- Case 2: Inbound Callcenter - demand forecats - scheduled R jobs to update the model
+- Case 3: conversion score for real time bidding - auction for ad publishing on webpages
+
+
+##Neural Embeddings and NLP with R and Spark
+
+- Neural Embeddings - going beyond word vectors
+- Context-Based Representation - How we use words
+- Semantic meaning - the meaning
+- GHTorrent Dataset
+- Sequence to Sequence Learning : Encoder-Decoder Models
+- Seq2Seq
+- Trainig with a LSTM
+- Implementation in CNTK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- 

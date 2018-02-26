@@ -1,0 +1,307 @@
+---
+title: "user2017"
+author: "Tobias Romar"
+date: "6 juli 2017"
+output: html_document
+---
+
+
+##moodler: A new R package to easily fetch data from Moodle (in no time)
+
+####Moodle
+- Big open-source learning platform
+- 100 million users
+- community driven with 1300 plugins
+- consist of database + file storage
+- Database stores logs on webpage useage, discussion forum and quizes
+- Analytics plugins inside moodle are pretty static and not adopted to R!
+- In order to get data into R you need SQL + Moodle DB knowledge
+- library(moodler)
+- library(igraph)
+
+##Can you keep a secret?
+
+- Secrets: Database connection, cloud service authentication, API keys
+- Secrets in plain text in script!!!
+- Potentially leak  by e-mail, from R (history, .Rdata) and private to public Githib repository
+- Solution: Encrypted file inside your project --> Public key cryptography
+- Public and private key pairs
+- Decrypt using your own private key
+- library(secret) - Open SSL infrastructure
+- Create vault, add users, encrypt and decrypt secrets
+####Use cases: 
+- Encrypt a secret to use on different machines
+- Encrypt a secret to share with team
+- Encrypt secret to use with continuous integration
+
+
+##Scraping data with rvest and purrr
+
+- Based on tidyverse, especially purrr and rvest
+- Presentor working with loans to consumers nut personla interest in football
+- HSX - Hollywood stock exchange
+- read html and css code
+- main functions in rvest: read_html, html_node, html_text, html_table, 
+- look at the script o
+- pmap in purr useful
+- www.maxhumber.com
+
+##jug: Building Web APIs for R
+
+- small web development framework for R
+- Relies on the library(httpuv)
+- Training a random forest model - library(randomForest)
+- Then build a web API with library(jug)
+- Send a JSON object to the API and get the prediction
+
+
+##MCMC Output Analysis using R package mcmcse
+
+- Univariate and multivariate standard errors for MCMC
+- What are the errors 
+- In MCMC correlated drawings
+- Estimates the standard errors
+- function mcse()
+
+
+
+####Lunch break...
+
+
+##ReinforcementLearning - A package for replicating human behavior in R
+
+- Two parts, first: reinforment learning, second: the package
+- Reinforcement learning: human-like-learning, trial-and-error interactions, dynamic environment
+- Examples: robotics, stock market, AI (Atari games)
+- Feedback of agent restricted to reward signal - imporove behavior
+- Agent - Environment interface
+- Goal: Best action in each state
+- Experience Replay - Require samples consisting of states, actions and rewards
+- Batch reinforcemtn learning - Collect sample sequences
+- Package: ReinforcementLearning -> close the gap in R
+- Data format required: (s,a,r,s_new) - current environment, action, reward, next environment - data.frame
+- Case study: Gridword - celll = state (4 states)
+- Learning parameters
+
+##Deep Learning for Natural Language Processing in R
+
+- Text categorization with CNN in Mxnet
+- Why CNN? Learn complex hierachical features
+- Convolutions - kernel of weights
+- Crepe model: text categorisation
+- Alphabet  = 69 = rows, columns = 1014 characters (symboler) - creating the matrix with letters
+- Convolutional stage - MXnet
+- Non-Linrat activation function- ReLU
+- Pooling to reduce the dimensions
+- Stacked convolutional layers
+- Flattening
+- Randomly dropping in order to not overfit
+- Gradient Decent for training
+- Training time 24h with 2 GPUs with a 2 million sample
+- aka.ms/deep-learning-for-nlp
+- 256 filters in each layer
+
+##R4ML: An R based Scalable Machine Learning Framework
+
+- A R-language front end to Apache SystemML
+- SparkR is a Thin Wrapper Over Apache Spark
+- Linear Algebra at Scale
+- Apache SystemML
+- library(R4ML)
+- library(SparkR)
+- Grid search to improve accuracy
+
+
+##Computer Vision and image recognition algorithms for R users
+
+- library(magick), library(imageR) etc. packages already exist
+- Github: bnosac/image (6 packages in image)
+- presentor going through six oackages
+- image.CorenerDetectionF9 - detect corners in image
+- image.CannyEdges - find edges in images
+- image.LineSegmentDetector - detect lines in image
+- image.ContourDetector - detect contour lines
+- magick - convert jpeg to ppgm
+- image.dlib - detect robust features (SURF) - detect faces?
+- image.darknet - detect location in images based on dark weight 
+
+
+##Depth and depth-based classification with R package ddalpha
+
+- Data depth implementation
+- How deep is a point in the data, 0 far away, 1 if close to center
+- linear separation to include the point but creating smallest sample
+- Classification: calculate depth with respect to both classes
+- Depth-based classification - library(ddalpha)
+
+
+####cofeee...
+
+
+##Keynote: Parallel Computation in R
+
+- General Design Patterns for parallel computations
+- library(partools)
+- Parallel hardware for the masses; 4 cores standrd, GPUs
+- Intel Xeon Phi ~ 60 cores
+- Big Data - wahtever that is
+- Non-"embarrassingly parallel" algorithmns
+- Bandwidth limitations - cPU/memory etc.
+- Broad user base makes it a challenge
+- Example: Matrix-Vector Multiplicaton with for loop - short calcuations = time consuming
+- Use cases: Quantile regression, Nearest-Neighbor regression, graph algos, group-by-and-find-means
+credit card fraud detection
+- Software Alchemy (SA) data to chunks and apply lm() to each chunk and average (parallelize)
+- Message passing/distributed comp. parallel package
+- Shared-memory - process access to common memory
+- Conclusion: Hype in parallel computation.
+- Automatic parallelizatoin overrated.
+- What do APIs do?
+- Machine Learning = Linear Regression!!
+- Use: SA & Distributed computation
+- SparkR is hyped! - No transparency and not suited for most of hte above use cases.
+- MPI/OpenMP outperforms Spark (Reyes-Ortiz)
+- library(parallel) --> manger scatters, make workers calculate, and only calculate the final results!
+- Chunk files already from the beginning
+- "Leave it there" - avoiding overloading the network
+- colMeans() at the end
+
+
+##5 minutes sessions - Machine Learning in Business
+
+####This is a small sized bank´s risk management environment (WU)
+- Why R in risk management? Better instaed of excel spreadsheets
+- R & Shiny --> automated reports
+- boxr & readxls & shiny etc.
+- shiny as UI for user and R Rmarkdown to create reports 
+
+####eventstudie R package
+- Package for analysis an event
+- library(eventstudies)
+- Handles event time
+- Market model, excess retrun etc.
+- Cumulative sum with remapping
+- Bootstrap, t-test...
+- Computes CAR
+- Available on CRAN
+
+####Automatic Machine Learning in R
+
+- H20.ai
+- AutoML (preprocessing, random grid search)
+- Ensamble approach to put together
+- Written in Java but R package available
+- h2o.init() & h2o.automl()
+
+####R in Pharma
+
+- R is coming into pharma business (university training)
+- R Studio & Shiny
+- Version control of importance
+- R package server (used more than once - create package)
+- Local user groups
+- Tech & Social enablers
+- Problem: Regulated industry --> "documented evdience to be specified"
+- tidyverse docker image
+
+
+####Using R to analyse Healthcare cost of older patients using personal emergency devices
+
+- 5 percent of patients make up half of the health care costs
+- Model patients in segment pyramid with Markov Chain
+- Are people moving up or down or staying in the previous years pyramid
+- Conclusion: monitor patients in lower levels from beginning
+
+####Statisticss hitting the business front line
+
+- Vestas Wind Systems
+- Cost models for wind turbines
+- Previously done in excel
+- Git, R-Markdown
+- Modelling in R
+- Running R markdown using knitr
+- Continuous integration with GitLab
+- Challenge: Lack of knowlege in the beginning
+
+####Shiny used in Nestle
+
+- Experiments around gluten
+- Shiny used as user interface for input and analysis done thereafter
+- More R is used in experiments
+- Developing own packages
+
+
+####Brewing up the perfect beer
+
+- Brewing data - information on interaction with the jeast
+- Aggregating and presenting the data in Shiny app
+- Simple process but huge business value
+- Shiny app with download 
+- Problem: data ingestion in shiny
+
+
+####Candy Crush R Saga
+
+- 342 million unique monthly players
+- Data engineers (ETL , hadoop) & Data Scientists (modelling, AB-testing)
+- R useful but python also used
+- Data stored to Hadoop cluster but data 
+- Developed own internal r packages
+- Dashboards - Qlikview but Shiny is developed
+- No report without code initiative - all reports needs to have a github link
+- R markdown used
+
+####Gamifyr: Transforming Machine Learning into games
+
+- Gamification: The use of games in non-games fields
+- Implementation in Shiny
+- Games to generate data
+- Estimate of cost for creating a training set
+- Get data from Games
+
+
+####R-KDB+ Interface
+
+- Better than data.table
+- APL language --> cryptic
+- Standard for wall street previously
+- Super fast + map reduce + columnar storage
+- kdb+/r
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
